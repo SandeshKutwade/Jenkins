@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Building"){
             steps{
-                sh 'python -m py_compile FirstPython.py'
+                sh 'python3 -m py_compile FirstPython.py'
                 stash(name:"PythonResult", includes: "*.py*")
             }
         }
