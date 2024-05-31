@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Testing'){
             steps{
-                sh 'python -m unittest test_module.py test-reports/results.xml testingpyhton/testingfile.py'
+                sh 'python3 -m unittest test_module.py test-reports/results.xml testingpyhton/testingfile.py'
             }
             post {
                 always {
