@@ -1,0 +1,11 @@
+pipeline{
+    agent any
+    stages{
+        stage("Building"){
+            steps{
+                sh 'python -m py_compile FirstPython.py'
+                stash(name:"PythonResult", includes: "*.py*")
+            }
+        }
+    }
+}
