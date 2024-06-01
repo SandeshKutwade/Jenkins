@@ -1,5 +1,5 @@
-def addition(a,b,c):
-    return a+b+c
+def addition(a,b):
+    return a+b
 
-result = addition(11,44,6)
+result =addition(3,5)
 print(result)

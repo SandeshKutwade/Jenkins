@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+    stages{
+        stage('Building'){
+            steps{
+                sh 'python3 -m py_compile testingpyhton/FirstPython.py'
+                stash(name:"PythonResult", includes: "testingpyhton/*.py*")
+            }
+        }
+        stage('Testing'){
+            steps{
+                sh 'python3 -m unittest testingfile.py'
+            }
+            // post {
+            //     always {
+            //         junit 'test-reports/results.xml'
+            //     }
+            // }
+        }
+    }
+}
